@@ -24,15 +24,14 @@ def load_model():
     # Load model and processor
     image_processor = SegformerImageProcessor()
     model = SegformerForSemanticSegmentation.from_pretrained(
-        "nvidia/mit-b1",
+        "nvidia/mit-b0",
         num_labels=len(id2label),
         id2label=id2label,
         label2id=label2id,
     )
     
     # Load trained weights
-    # model.load_state_dict(torch.load("model/akhir_segformer_model_state_dict.pth", map_location=torch.device('cpu')))
-    model.load_state_dict(torch.load("percobaan_keenam_b1.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("model/akhir_segformer_model_state_dict.pth", map_location=torch.device('cpu')))
     model.eval()
     
     return model, image_processor
