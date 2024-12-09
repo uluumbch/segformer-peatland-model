@@ -1,0 +1,8 @@
+model/*
+!model/segformer_model_state_dict.pth
+.venv
+.git
+.gitignore
+__pycache__
+*.pyc
+README.md

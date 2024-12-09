@@ -6,13 +6,13 @@ import numpy as np
 
 # Define color mapping and labels
 colorandlabeltoID = [
-    {"color": [255, 0, 0], "label": "vegetation with a density of 15 to 30 meters", "id": 0},   # Red
-    {"color": [255, 0, 102], "label": "shrubs that are 5 to 6 meters away", "id": 1},         # Pink
-    {"color": [112, 48, 160], "label": "new shrubs that grow to a maximum of 3 meters", "id": 2}, # Purple
-    {"color": [237, 125, 49], "label": "dry bush", "id": 3},                                # Orange
-    {"color": [131, 60, 12], "label": "land", "id": 4},                                        # Brown
-    {"color": [0, 102, 255], "label": "water", "id": 5},                                          # Blue
-    {"color": [255, 255, 0], "label": "house", "id": 6},                                        # Yellow
+    {"color": [255, 0, 0], "label": "vegetation with a density of 15 to 30 meters", "id": 0},  
+    {"color": [255, 0, 102], "label": "shrubs that are 5 to 6 meters away", "id": 1},        
+    {"color": [112, 48, 160], "label": "new shrubs that grow to a maximum of 3 meters", "id": 2},
+    {"color": [237, 125, 49], "label": "dry bush", "id": 3},                               
+    {"color": [131, 60, 12], "label": "land", "id": 4},                                       
+    {"color": [0, 102, 255], "label": "water", "id": 5},                                         
+    {"color": [255, 255, 0], "label": "house", "id": 6},                                       
 ]
 
 @st.cache_resource
@@ -31,7 +31,7 @@ def load_model():
     )
     
     # Load trained weights
-    model.load_state_dict(torch.load("model/akhir_segformer_model_state_dict.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("./model/segformer_model_state_dict.pth", map_location=torch.device('cpu')))
     model.eval()
     
     return model, image_processor

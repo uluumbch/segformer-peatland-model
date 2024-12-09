@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+
 # Expose the port that Streamlit will run on
 EXPOSE 8501
 
