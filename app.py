@@ -4,6 +4,8 @@ from transformers import SegformerImageProcessor, SegformerForSemanticSegmentati
 from PIL import Image
 import numpy as np
 
+st.set_page_config(page_title="Peatland Segmentation", page_icon="🌿")
+
 # Define color mapping and labels
 colorandlabeltoID = [
     {"color": [255, 0, 0], "label": "vegetation with a density of 15 to 30 meters", "id": 0},  
